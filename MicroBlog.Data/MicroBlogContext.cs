@@ -19,11 +19,7 @@ namespace MicroBlog.Data
             : base("Name=MicroBlog")
         {
         }
-
-        public MicroBlogContext(bool test)
-        {
-        }
-
+        
         public virtual DbSet<Author> Authors { get; set; }
 
         public virtual DbSet<Post> Posts { get; set; }
@@ -46,14 +42,14 @@ namespace MicroBlog.Data
                 FirstName = "John",
                 LastName = "Smith",
                 Email = "john@smith.com",
-                CreationDate = DateTime.Now,
+                CreationDate = DateTime.Now.AddDays(-4),
                 Posts = new List<Post>
                 {
                     new Post() { Content="Le contenu du premier billet.",
-                        PublicationDate = DateTime.Now,
+                        PublicationDate = DateTime.Now.AddDays(-3),
                         Title= "Premier Billet" },
                     new Post() { Content="Le contenu du second billet.",
-                        PublicationDate = DateTime.Now,
+                        PublicationDate = DateTime.Now.AddDays(-2),
                         Title= "Second Billet" }
                 }
             });
@@ -63,7 +59,7 @@ namespace MicroBlog.Data
                 FirstName = "Steeve",
                 LastName = "Ric",
                 Email = "Steeve@Ric.com",
-                CreationDate = DateTime.Now
+                CreationDate = DateTime.Now.AddDays(-5)
             });
 
             microBlogContext.Authors.Add(new Author()
@@ -71,14 +67,14 @@ namespace MicroBlog.Data
                 FirstName = "Gerard",
                 LastName = "Darmon",
                 Email = "gg@darmon.com",
-                CreationDate = DateTime.Now,
+                CreationDate = DateTime.Now.AddDays(-7),
                 Posts = new List<Post>
                 {
                     new Post() { Content="Le contenu du premier billet de Gérard.",
-                        PublicationDate = DateTime.Now,
+                        PublicationDate = DateTime.Now.AddDays(-3),
                         Title= "Premier Billet de Gérard" },
                     new Post() { Content="Le contenu du second billet de Gérard.",
-                        PublicationDate = DateTime.Now,
+                        PublicationDate = DateTime.Now.AddDays(-6),
                         Title= "Second Billet de Gérard" }
                 }
             });
@@ -88,7 +84,7 @@ namespace MicroBlog.Data
                 FirstName = "Thomas",
                 LastName = "Heron",
                 Email = "Thomas@Heron.com",
-                CreationDate = DateTime.Now
+                CreationDate = DateTime.Now.AddDays(-2)
             });
 
             microBlogContext.Authors.Add(new Author()
@@ -96,7 +92,7 @@ namespace MicroBlog.Data
                 FirstName = "Bruce",
                 LastName = "Mesquito",
                 Email = "Bruce@Mesquito.com",
-                CreationDate = DateTime.Now
+                CreationDate = DateTime.Now.AddDays(-1)
             });
             base.Seed(microBlogContext);
         }

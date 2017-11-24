@@ -86,7 +86,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Controllers\AuthorsControllerTests.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Controllers\PostsControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +103,7 @@
       <Name>MicroBlog</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

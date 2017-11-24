@@ -46,7 +46,7 @@ namespace MicroBlog.Controllers
         
         public void Delete(int id)
         {
-            Author authorToDelete = microBlogContext.Authors.Find(id);
+            Author authorToDelete = microBlogContext.Authors.Include(a => a.Posts).First(a => a.Id == id);
             microBlogContext.Authors.Remove(authorToDelete);
             microBlogContext.SaveChanges();
         }
