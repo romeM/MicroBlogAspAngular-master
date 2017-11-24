@@ -10,20 +10,19 @@
                     </div>
                 </div>
                 <div class="panel-body">
-                    <div class="card-columns">
-                        <div class="card" ng-repeat="author in authors | filter:query">
-                            <div class="card-block">
-                                <h4 class="card-title"><a href="/#/author/{{author.Id}}">{{author.FirstName}} {{author.LastName}}</a></h4>
-                                <p class="card-text">
-                                    {{author.Email}} <br /> {{author.CreationDate  | date:'MM/dd/yyyy'}}<br />
-                                    Total Posts : {{author.Posts.length}}<br />
-                                    <button ng-click="selectAuthor(author)" class="btn btn-primary"> Editer </button>
-                                    <button ng-click="delete(author.Id)" class="btn btn-danger"> X </button>
-                                </p>
+                    <div class="row">
+                            <div class="card col-md-4" ng-repeat="author in authors | filter:query">
+                                <div class="card-block">
+                                    <h4 class="card-title"><a href="/#/author/{{author.Id}}">{{author.LastName}} {{author.FirstName}}</a></h4>
+                                    <p class="card-text">
+                                        {{author.Email}} <br /> {{author.CreationDate  | date:'MM/dd/yyyy'}}<br />
+                                        Nombre total de billets : {{author.Posts.length}}<br />
+                                        <button ng-click="selectAuthor(author)" class="btn btn-primary"> Editer </button>
+                                        <button ng-click="delete(author.Id)" class="btn btn-danger"> X </button>
+                                    </p>
+                                </div>
                             </div>
-                            
                         </div>
-                    </div>
                 </div>
             </div>
             </div>

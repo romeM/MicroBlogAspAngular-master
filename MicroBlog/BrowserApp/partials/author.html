@@ -5,8 +5,8 @@
         </div>
     </div>
     <div class="panel-body">
-        <div class="card-group">
-            <div class="card" ng-repeat="post in author.Posts">
+        <div class="row">
+            <div class="card col-md-6" ng-repeat="post in author.Posts">
                 <div class="card-block">
                     <h4 class="card-title">{{post.Title}} - {{post.PublicationDate | date:'MM/dd/yyyy'}}</h4>
                     <p class="card-text">

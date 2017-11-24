@@ -10,8 +10,8 @@
                 </div>
             </div>
             <div class="panel-body">
-                <div class="card-deck">
-                    <div class="card" ng-repeat="post in posts | filter:query">
+                <div class="row">
+                    <div class="card col-md-12" ng-repeat="post in posts | filter:query">
                         <div class="card-block">
                             <h4 class="card-title">{{post.Title}}</h4> par {{post.Author.FirstName}} {{post.Author.LastName}} le {{post.PublicationDate  | date:'MM/dd/yyyy hh:mm:ss'}}
                             <p class="card-text">
@@ -36,9 +36,12 @@
                 <div class="card-block">
                     <h4 class="card-title"><input ng-model="selectedPost.Title" placeholder="Titre"></h4>
                     <p class="card-text">
+                        Auteur : 
                         <select name="repeatSelect" id="repeatSelect" ng-model="selectedPost.Author.Id">
                             <option ng-repeat="author in authors" value="{{author.Id}}">{{author.LastName}} {{author.FirstName}}</option>
                         </select>
+                    </p>
+                    <p class="card-text">
                         <textarea ng-model="selectedPost.Content" placeholder="Contenu"></textarea>
                         <br />
                         <button ng-click="save(selectedPost)" ng-if="selectedPost.Id" class="btn btn-primary"> Editer </button>

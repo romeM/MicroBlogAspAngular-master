@@ -18,7 +18,7 @@ namespace MicroBlog.Controllers
         
         public IEnumerable<Author> Get()
         {
-            var result = microBlogContext.Authors.Include(a => a.Posts).OrderBy(a => a.FirstName).ToList();
+            var result = microBlogContext.Authors.Include(a => a.Posts).OrderBy(a => a.LastName).ToList();
             
             return result;
         }
