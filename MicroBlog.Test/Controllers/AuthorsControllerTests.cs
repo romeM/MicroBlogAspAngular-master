@@ -10,10 +10,9 @@ namespace MicroBlog.Test.Controllers
 {
     /*************************************************************************
     **************************************************************************
-    Pour faire fonctionner les tests, il est nécessaire de mettre à jour l'App.Config
-    Du Projet de MicroBlog.Test et de renseigner le bon chemin complet sur votre ordinateur 
-    de la base de données présente dans le projet MicroBlog/App_Data/ 
-    Exemple : 
+    In order to run the tests, the connectionstring in the App.Config file of the MicroBlog.Test 
+    project has to been configured to point to the right database full relative path in MicroBlog/App_Data.
+    Example : 
     <add name="MicroBlog" connectionString="Data Source=(LocalDB)\MSSQLLocalDB;
     AttachDbFilename=C:\Dev\MicroBlogAspAngular-master\MicroBlog\App_Data\MicroBlogDb.mdf;
     Integrated Security=True" providerName="System.Data.SqlClient" />
