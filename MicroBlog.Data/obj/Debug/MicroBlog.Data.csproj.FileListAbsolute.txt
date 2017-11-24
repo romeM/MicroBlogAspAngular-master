@@ -1,0 +1,10 @@
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\bin\Debug\MicroBlog.Data.dll.config
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\bin\Debug\MicroBlog.Data.dll
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\bin\Debug\MicroBlog.Data.pdb
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\bin\Debug\EntityFramework.dll
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\bin\Debug\EntityFramework.xml
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\obj\Debug\MicroBlog.Data.dll
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\obj\Debug\MicroBlog.Data.pdb
+C:\Dev\MicroBlogAspAngular-master\MicroBlog.Data\obj\Debug\MicroBlog.Data.csprojResolveAssemblyReference.cache

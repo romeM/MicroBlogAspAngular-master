@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html ng-app="MicroBlog">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=10;IE=11">
+    <title ng-bind="module.pageTitle">Micro Blog</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+    <div class="container container-default">
+        <div class="row app-header">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a ng-href="#">Accueil</a></li>
+                <li role="presentation"><a href="#">Auteurs</a></li>
+                <li role="presentation"><a href="#!posts">Billets</a></li>
+            </ul>
+            <div class="col-sm-12">
+                <h3 class="pageTitle">
+                    Hello Micro-Blog
+                </h3>
+            </div>
+        </div>
+        
+        <div id="ng-view" ng-view></div>
+
+        <div class="footer"><hr />Version "{{version}}"</div>
+    </div>
+
+    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/controllers/post-view.js"></script>
+    <script src="js/directives/post-view.js"></script>
+    <script src="js/services/factory-api.js"></script>
+</body>
+</html>

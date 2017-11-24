@@ -1,0 +1,49 @@
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-8"><h3>Liste des auteurs</h3></div>
+                        <div class="col-md-4">
+                            <h3><input ng-model="query" placeholder="Search" class="form-control"></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div class="card-columns">
+                        <div class="card" ng-repeat="author in authors | filter:query">
+                            <div class="card-block">
+                                <h4 class="card-title"><a href="/#/author/{{author.Id}}">{{author.FirstName}} {{author.LastName}}</a></h4>
+                                <p class="card-text">
+                                    {{author.Email}} <br /> {{author.CreationDate  | date:'MM/dd/yyyy'}}<br />
+                                    Total Posts : {{author.Posts.length}}<br />
+                                    <button ng-click="selectAuthor(author)" class="btn btn-primary"> Editer </button>
+                                    <button ng-click="delete(author.Id)" class="btn btn-danger"> X </button>
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Auteur
+                </div>
+                <div class="panel-body">
+                    <div class="card-block">
+                        <h4 class="card-title"><input ng-model="selectedAuthor.FirstName" placeholder="Prenom"> <input ng-model="selectedAuthor.LastName" placeholder="Nom"></h4>
+                        <p class="card-text">
+                            <input ng-model="selectedAuthor.Email" placeholder="Email"><br /> {{selectedAuthor.CreationDate | date:'MM/dd/yyyy'}}<br />
+                            <span ng-if="selectedAuthor.Posts">Total Posts : {{selectedAuthor.Posts.length}}<br /></span>
+                            <button ng-click="save(selectedAuthor)" ng-if="selectedAuthor.Id" class="btn btn-primary"> Editer </button>
+                            <button ng-click="cancel(selectedAuthor)" ng-if="selectedAuthor.Id" class="btn btn-primary"> Annuler </button>
+                            <button ng-click="create(selectedAuthor)" ng-if="!selectedAuthor.Id" class="btn btn-primary"> Creer Auteur </button>
+                        </p>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>

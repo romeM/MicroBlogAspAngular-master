@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-md-8"><h3>Liste des Billets</h3></div>
+                    <div class="col-md-4">
+                        <h3><input ng-model="query" placeholder="Search" class="form-control"></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="card-deck">
+                    <div class="card" ng-repeat="post in posts | filter:query">
+                        <div class="card-block">
+                            <h4 class="card-title">{{post.Title}}</h4> par {{post.Author.FirstName}} {{post.Author.LastName}} le {{post.PublicationDate  | date:'MM/dd/yyyy hh:mm:ss'}}
+                            <p class="card-text">
+                                {{post.Content}}<br />
+                                <button ng-click="selectPost(post)" class="btn btn-primary"> Editer </button>
+                                <button ng-click="delete(post.Id)" class="btn btn-danger"> X </button>
+                            </p>
+                        </div>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Billet
+            </div>
+
+            <div class="panel-body">
+                <div class="card-block">
+                    <h4 class="card-title"><input ng-model="selectedPost.Title" placeholder="Titre"></h4>
+                    <p class="card-text">
+                        <select name="repeatSelect" id="repeatSelect" ng-model="selectedPost.Author.Id">
+                            <option ng-repeat="author in authors" value="{{author.Id}}">{{author.LastName}} {{author.FirstName}}</option>
+                        </select>
+                        <textarea ng-model="selectedPost.Content" placeholder="Contenu"></textarea>
+                        <br />
+                        <button ng-click="save(selectedPost)" ng-if="selectedPost.Id" class="btn btn-primary"> Editer </button>
+                        <button ng-click="cancel(selectedPost)" ng-if="selectedPost.Id" class="btn btn-primary"> Annuler </button>
+                        <button ng-click="create(selectedPost)" ng-if="!selectedPost.Id" class="btn btn-primary"> Creer Billet </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
